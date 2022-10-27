@@ -8,11 +8,11 @@ module.exports = {
   development: {
     client: 'mysql2',
     connection: {
-      host: 'localhost',
-      port: 3306,
-      database: 'postdb',
+      host: 'containers-us-west-103.railway.app',
+      port: 5549,
+      database: 'railway',
       user: 'root',
-      password: 'Root1234',
+      password: '3cZYbb0XR0FIaJrgeRRx',
     },
     pool: {
       min: 2,
