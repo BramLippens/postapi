@@ -3,8 +3,8 @@ const knexfile = require('./knexfile');
 
 const config = require('config');
 
-const NODE_ENV = config.get('env');
-const isdevelopment = NODE_ENV === 'development';
+// const NODE_ENV = config.get('env');
+const isdevelopment = true;
 
 // TODO in production don't access the development database directly
 // but decide based on the NODE_ENV environment variable
