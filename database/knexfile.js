@@ -1,4 +1,3 @@
-const { join } = require('path');
 // Update with your config settings.
 
 /**
