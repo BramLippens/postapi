@@ -1,5 +1,7 @@
 // Update with your config settings.
 
+const config = require('config');
+
 /**
  * @type { Object.<string, import("knex").Knex.Config> }
  */
@@ -7,11 +9,11 @@ module.exports = {
   development: {
     client: 'postgresql',
     connection: {
-      database: 'railway',
-      host: 'containers-us-west-51.railway.app',
-      port: 5890,
-      user: 'postgres',
-      password: 'hFvXNxkrDJVwqfE9ntQi',
+      database: config.get('postgresdatabase.connection.database'),
+      host: config.get('postgresdatabase.connection.host'),
+      port: config.get('postgresdatabase.connection.port'),
+      user: config.get('postgresdatabase.connection.user'),
+      password: config.get('postgresdatabase.connection.password'),
     },
     pool: {
       min: 2,

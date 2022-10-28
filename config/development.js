@@ -4,14 +4,15 @@ module.exports = {
     level: 'silly',
     disabled: false,
   },
+  port: 5000,
   postgresdatabase: {
     client: 'postgresql',
     connection: {
-      host: 'PGHOST',
-      port: 'PGPORT',
-      user: 'PGUSER',
-      password: 'PGPASSWORD',
-      database: 'PGDATABASE',
+      host: 'localhost',
+      port: 5432,
+      user: 'postgres',
+      password: 's43trpVtpTqH8Mq@%BVa',
+      database: 'postdb',
     },
   },
 };
