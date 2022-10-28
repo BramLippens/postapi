@@ -9,11 +9,11 @@ module.exports = {
   development: {
     client: 'postgresql',
     connection: {
-      database: config.get('postgresdatabase.connection.database'),
-      host: config.get('postgresdatabase.connection.host'),
-      port: config.get('postgresdatabase.connection.port'),
-      user: config.get('postgresdatabase.connection.user'),
-      password: config.get('postgresdatabase.connection.password'),
+      host: 'localhost',
+      port: 5432,
+      user: 'postgres',
+      password: 's43trpVtpTqH8Mq@%BVa',
+      database: 'postdb',
     },
     pool: {
       min: 2,

@@ -30,6 +30,7 @@ module.exports = async function createServer() {
       return new Promise((resolve) => {
         app.listen(PORT);
         getLogger().info(`Server is up on port ${PORT}`);
+        resolve();
       });
     },
     async stop() {

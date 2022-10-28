@@ -4,9 +4,11 @@ const postController = require('../controller/post.js');
 
 const router = express.Router();
 
-router.post('/user', userController.createUser);
-router.get('/user/:id', userController.getUser);
-router.put('/user/:id', userController.updateUser);
+router.get('/users', userController.getUsers);
+router.post('/users', userController.createUser);
+router.get('/users/:id', userController.getUser);
+router.put('/users/:id', userController.updateUser);
+router.post('/users/login', userController.login);
 
 router.post('/post', postController.createpost);
 router.get('/post/', postController.getposts);

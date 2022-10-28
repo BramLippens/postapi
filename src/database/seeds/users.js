@@ -12,8 +12,7 @@ exports.seed = async function (knex) {
       email: 'bram.lippens09@gmail.com',
       first_name: 'Bram',
       last_name: 'Lippens',
+      password: 'password',
     },
-    { id: uuidv4(), email: 'John.doe@gmail.com', first_name: 'John', last_name: 'Doe' },
-    { id: uuidv4(), email: 'peter.peters@gmail.com', first_name: 'Peter', last_name: 'Peters' },
   ]);
 };
