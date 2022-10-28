@@ -5,8 +5,16 @@
   "main": "index.js",
   "scripts": {
     "migrate": "npx knex migrate:latest --knexfile database/knexfile.js",
-    "dev": "npx env-cmd nodemon index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "npx env-cmd nodemon src/index.js",
+    "test": "npx env-cmd -f .env.test jest",
+    "test:coverage": "yarn test --coverage"
+  },
+  "jest": {
+    "testPathIgnorePatterns": [
+      "src",
+      "node_modules",
+      "config"
+    ]
   },
   "author": "",
   "license": "ISC",
@@ -21,6 +29,8 @@
     "winston": "^3.8.2"
   },
   "devDependencies": {
-    "nodemon": "^2.0.20"
+    "jest": "^29.2.2",
+    "nodemon": "^2.0.20",
+    "supertest": "^6.3.1"
   }
 }

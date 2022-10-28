@@ -21,10 +21,10 @@ module.exports = {
     },
     migrations: {
       tableName: 'knex_migrations',
-      directory: './database/migrations',
+      directory: './src/database/migrations',
     },
     seeds: {
-      directory: './database/seeds',
+      directory: './src/database/seeds',
     },
   },
 
