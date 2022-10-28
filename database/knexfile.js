@@ -1,4 +1,5 @@
 const { join } = require('path');
+const { config } = require('config');
 // Update with your config settings.
 
 /**
@@ -6,13 +7,13 @@ const { join } = require('path');
  */
 module.exports = {
   development: {
-    client: 'mysql2',
+    client: 'postgresql',
     connection: {
-      host: 'containers-us-west-103.railway.app',
-      port: 5549,
-      database: 'railway',
-      user: 'root',
-      password: '3cZYbb0XR0FIaJrgeRRx',
+      host: config.get('postgresdatabase.connection.host'),
+      port: config.get('postgresdatabase.connection.port'),
+      database: config.get('postgresdatabase.connection.database'),
+      user: config.get('postgresdatabase.connection.user'),
+      password: config.get('postgresdatabase.connection.password'),
     },
     pool: {
       min: 2,
