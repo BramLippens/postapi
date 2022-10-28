@@ -3,9 +3,9 @@ const { initializeKnex } = require('./database/db');
 const { initializeLogger, getLogger } = require('./utils/logging');
 const config = require('config');
 
-const NODE_ENV = config.get('env');
-const isdevelopment = NODE_ENV === 'development';
-const port = config.get('port');
+// const NODE_ENV = config.get('env');
+const isdevelopment = true;
+const port = 9000;
 
 const router = require('./routes/index');
 
@@ -20,7 +20,7 @@ initializeKnex();
 initializeLogger({
   level: 'silly',
   disabled: false,
-  defaultMeta: { NODE_ENV },
+  defaultMeta: {},
 });
 
 app.listen(port, () => {
