@@ -1,14 +1,12 @@
-GET http://localhost:5000/users
+GET http://localhost:5000/posts
 
 ###
 
-# Create a new user
-POST http://localhost:5000/users
+# register a new user
+POST http://localhost:5000/register
 Content-Type: application/json
 
 {
-    "first_name": "John",
-    "last_name": "Doe",
     "email": "test@test.be",
     "password": "test"
 }
@@ -21,4 +19,15 @@ Content-Type: application/json
 {
     "email": "test@test.be",
     "password": "test"
+}
+
+###
+
+PUT http://localhost:5000/users/a41fe111-22b4-4f1a-83e6-40aabb5106aa
+Content-Type: application/json
+# Authorization: Bearer <token>
+
+{
+    "email": "test@test.be",
+    "username": "testy",
 }
