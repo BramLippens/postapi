@@ -1,6 +1,7 @@
 const express = require('express');
 const userController = require('../controller/user.js');
 const postController = require('../controller/post.js');
+const { requireAuth } = require('../utils/auth.js');
 
 const router = express.Router();
 
@@ -9,11 +10,11 @@ const router = express.Router();
 // Register
 router.post('/register', userController.register);
 // Login
-router.post('/users/login', userController.login);
+router.post('/login', userController.login);
 // Post Routes
 // Create Post
-router.post('/posts', postController.createPost);
+router.post('/posts', requireAuth, postController.createPost);
 // get all posts of a user
-router.get('/posts', postController.getPosts);
+router.get('/posts', requireAuth, postController.getPosts);
 
 module.exports = router;

@@ -4,9 +4,10 @@ const { getLogger } = require('../utils/logging.js');
 class UserController {
   async register(req, res) {
     try {
-      const id = await UserService.register(req.body);
-      res.status(201).json(id);
-      getLogger().silly(`User created with id ${id}`);
+      const session = await UserService.register(req.body);
+      res.status(201).json(session);
+      // res.body(session);
+      getLogger().silly(`User created with token ${session.token}`);
     } catch (error) {
       getLogger().error(error);
       res.status(500).json({ error: 'Internal server error' });

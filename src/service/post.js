@@ -2,9 +2,9 @@ const postDAO = require('../dao/post.js');
 
 // TODO: validation
 class postService {
-  createpost(postDto) {
-    const { title, category, content, userId, likes, dislikes } = postDto;
-    return postDAO.createpost(title, category, content, userId, likes, dislikes);
+  createpost(userId, postDto) {
+    const { title, category, content } = postDto;
+    return postDAO.createpost(title, category, content, userId, 0, 0);
   }
   getposts(userId) {
     return postDAO.getposts(userId);

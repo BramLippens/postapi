@@ -13,7 +13,7 @@ Content-Type: application/json
 
 ###
 
-POST http://localhost:5000/users/login
+POST http://localhost:5000/login
 Content-Type: application/json
 
 {
@@ -23,11 +23,19 @@ Content-Type: application/json
 
 ###
 
-PUT http://localhost:5000/users/a41fe111-22b4-4f1a-83e6-40aabb5106aa
+# get all posts
+GET http://localhost:5000/posts
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjljNjdjYjkyLThiNzMtNGRiMi1iMmU2LWQ5MzlmNGZkOWMyOSIsImVtYWlsIjoidGVzdEB0ZXN0LmJlIiwiaWF0IjoxNjY3MDc1MDQ4LCJleHAiOjE2NjcwNzg2NDh9.L23AMhn13h5-rE_6_VxRquaNNLeK2idmujndmqruzMw
+
+###
+
+# create a new post
+POST http://localhost:5000/posts
+Authorization: Bearer 
 Content-Type: application/json
-# Authorization: Bearer <token>
 
 {
-    "email": "test@test.be",
-    "username": "testy",
+    "title": "test",
+    "content": "test",
+    "category": "test"
 }
