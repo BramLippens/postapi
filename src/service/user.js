@@ -2,6 +2,7 @@ const userDAO = require('../dao/user.js');
 const { getLogger } = require('../utils/logging.js');
 const config = require('config');
 const { hashPassword, verifyPassword } = require('../utils/password.js');
+const { generateToken } = require('../utils/jwt.js');
 
 class UserService {
   async register(userDto) {
@@ -23,9 +24,13 @@ class UserService {
   }
   async makeLoginData(user) {
     // add token
+    const token = await generateToken(user);
     return {
-      id: user.id,
-      email: user.email,
+      user: {
+        id: user.id,
+        email: user.email,
+      },
+      token,
     };
   }
 }

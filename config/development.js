@@ -15,4 +15,16 @@ module.exports = {
       database: 'postdb',
     },
   },
+  auth: {
+    jwt: {
+      secret: 's43trpVtpTqH8Mq@%BVa',
+      expiresIn: '1h',
+    },
+    argon: {
+      saltlenght: 32,
+      hashlength: 32,
+      timecost: 3,
+      memorycost: 2 ** 16,
+    },
+  },
 };
