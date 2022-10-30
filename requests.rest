@@ -1,0 +1,41 @@
+GET http://localhost:5000/posts
+
+###
+
+# register a new user
+POST http://localhost:5000/register
+Content-Type: application/json
+
+{
+    "email": "test@test.be",
+    "password": "test"
+}
+
+###
+
+POST http://localhost:5000/login
+Content-Type: application/json
+
+{
+    "email": "test@test.be",
+    "password": "test"
+}
+
+###
+
+# get all posts
+GET http://localhost:5000/posts
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZmOWJlZDVjLWRjNTMtNGU1OC04MDhhLTZiYTNiNzUxMDkxMSIsImVtYWlsIjoidGVzdEB0ZXN0LmJlIiwiaWF0IjoxNjY3MDc1Mjk1LCJleHAiOjE2NjcwNzg4OTV9.J-mjLTwwx8eAvuH1ZoeVTKyDcMqdRv_DIA-fTAzqfyQ
+
+###
+
+# create a new post
+POST http://localhost:5000/posts
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZmOWJlZDVjLWRjNTMtNGU1OC04MDhhLTZiYTNiNzUxMDkxMSIsImVtYWlsIjoidGVzdEB0ZXN0LmJlIiwiaWF0IjoxNjY3MDc1Mjk1LCJleHAiOjE2NjcwNzg4OTV9.J-mjLTwwx8eAvuH1ZoeVTKyDcMqdRv_DIA-fTAzqfyQ
+Content-Type: application/json
+
+{
+    "title": "test",
+    "content": "test",
+    "category": "test"
+}

@@ -1,4 +1,5 @@
 module.exports = {
   env: 'NODE_ENV',
-  port: 'PORT',
+  accessTokenSecret: 'ACCESS_TOKEN_SECRET',
+  refreshTokenSecret: 'REFRESH_TOKEN_SECRET',
 };
