@@ -25,13 +25,13 @@ Content-Type: application/json
 
 # get all posts
 GET http://localhost:5000/posts
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjljNjdjYjkyLThiNzMtNGRiMi1iMmU2LWQ5MzlmNGZkOWMyOSIsImVtYWlsIjoidGVzdEB0ZXN0LmJlIiwiaWF0IjoxNjY3MDc1MDQ4LCJleHAiOjE2NjcwNzg2NDh9.L23AMhn13h5-rE_6_VxRquaNNLeK2idmujndmqruzMw
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZmOWJlZDVjLWRjNTMtNGU1OC04MDhhLTZiYTNiNzUxMDkxMSIsImVtYWlsIjoidGVzdEB0ZXN0LmJlIiwiaWF0IjoxNjY3MDc1Mjk1LCJleHAiOjE2NjcwNzg4OTV9.J-mjLTwwx8eAvuH1ZoeVTKyDcMqdRv_DIA-fTAzqfyQ
 
 ###
 
 # create a new post
 POST http://localhost:5000/posts
-Authorization: Bearer 
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjZmOWJlZDVjLWRjNTMtNGU1OC04MDhhLTZiYTNiNzUxMDkxMSIsImVtYWlsIjoidGVzdEB0ZXN0LmJlIiwiaWF0IjoxNjY3MDc1Mjk1LCJleHAiOjE2NjcwNzg4OTV9.J-mjLTwwx8eAvuH1ZoeVTKyDcMqdRv_DIA-fTAzqfyQ
 Content-Type: application/json
 
 {

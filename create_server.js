@@ -2,6 +2,7 @@ const express = require('express');
 const { initializeKnex } = require('./src/database/db');
 const { initializeLogger, getLogger } = require('./src/utils/logging');
 const config = require('config');
+const cors = require('cors');
 
 const router = require('./src/routes/index');
 
@@ -20,8 +21,26 @@ module.exports = async function createServer() {
   await initializeKnex();
   const app = express();
   app.use(express.json());
-  app.use(router);
 
+  var allowlist = ['http://localhost:3000', 'http://example2.com'];
+  var corsOptionsDelegate = function (req, callback) {
+    var corsOptions;
+    if (allowlist.indexOf(req.header('Origin')) !== -1) {
+      corsOptions = { origin: true }; // reflect (enable) the requested origin in the CORS response
+    } else {
+      corsOptions = { origin: false }; // disable CORS for this request
+    }
+    callback(null, corsOptions); // callback expects two parameters: error and options
+  };
+
+  app.use(
+    cors({
+      origin: 'http://localhost:3000',
+      credentials: true,
+      allowedHeaders: ['Content-Type', 'Authorization'],
+    })
+  );
+  app.use(router);
   return {
     getApp() {
       return app;
