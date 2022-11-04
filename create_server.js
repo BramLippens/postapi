@@ -40,7 +40,7 @@ module.exports = async function createServer() {
       allowedHeaders: ['Content-Type', 'Authorization'],
     })
   );
-  app.use(router);
+  app.use('/api', router);
   return {
     getApp() {
       return app;

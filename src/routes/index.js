@@ -13,8 +13,8 @@ router.post('/register', userController.register);
 router.post('/login', userController.login);
 // Post Routes
 // Create Post
-router.post('/posts', requireAuth, postController.createPost);
+router.post('/post', requireAuth, postController.createPost);
 // get all posts of a user
-router.get('/posts', requireAuth, postController.getPosts);
+router.get('/post', requireAuth, postController.getPosts);
 
 module.exports = router;

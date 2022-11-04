@@ -13,6 +13,7 @@ let knexInstance;
 async function initializeKnex() {
   knexInstance = knex(knexfile.development);
   try {
+    // await knexInstance.raw('create database postdb');
     await knexInstance.raw('SELECT 1+1 AS result');
   } catch (error) {
     console.error(error);
