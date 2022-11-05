@@ -17,6 +17,7 @@ class UserController {
     try {
       const userData = await UserService.login(req.body.email, req.body.password);
       if (userData) {
+        getLogger().silly(`User logged in with token ${userData.token}`);
         res.status(200).json(userData);
       } else {
         res.status(401).json({ error: 'Invalid credentials' });
