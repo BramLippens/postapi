@@ -8,7 +8,9 @@ class UserService {
   async register(userDto) {
     const { email, password } = userDto;
     const hash = await hashPassword(password);
+    getLogger().info(`Service: Password successfully hashed`);
     const user = await userDAO.registerUser(email, hash);
+    getLogger().info(`Service: User created with email ${email}, id ${user.id}`);
     return await this.makeLoginData(user);
   }
   async login(email, password) {

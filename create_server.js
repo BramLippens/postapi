@@ -7,7 +7,7 @@ const cors = require('cors');
 const router = require('./src/routes/index');
 
 const NODE_ENV = config.get('env');
-const PORT = config.get('port') || 3000;
+const PORT = 9000;
 const LOG_LEVEL = config.get('log.level');
 const LOG_DISABLED = config.get('log.disabled');
 
@@ -47,8 +47,8 @@ module.exports = async function createServer() {
     },
     start() {
       return new Promise((resolve) => {
-        app.listen(PORT);
-        getLogger().info(`Server is up on port ${PORT}`);
+        app.listen(9000);
+        getLogger().info(`Server is up on port 9000`);
         resolve();
       });
     },

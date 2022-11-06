@@ -1,5 +1,6 @@
 const knex = require('knex');
 const knexfile = require('./knexfile');
+const { getLogger } = require('../utils/logging');
 
 const config = require('config');
 
@@ -23,6 +24,7 @@ async function initializeKnex() {
   let migrationsFailed = false;
   try {
     await knexInstance.migrate.latest();
+    getLogger().info('Migrations ran successfully');
   } catch (error) {
     console.error(error);
     migrationsFailed = true;
@@ -38,6 +40,8 @@ async function initializeKnex() {
   if (isdevelopment) {
     try {
       await knexInstance.seed.run();
+      getLogger().info('Seeding successful');
+      // getLogger().silly(await knexInstance(tables.user).select());
     } catch (error) {
       console.error(error);
       throw error;

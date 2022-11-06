@@ -1,13 +1,18 @@
 const postDAO = require('../dao/post.js');
+const { getLogger } = require('../utils/logging.js');
 
 // TODO: validation
 class postService {
-  createpost(userId, postDto) {
+  async createpost(userId, postDto) {
     const { title, category, content } = postDto;
-    return postDAO.createpost(title, category, content, userId, 0, 0);
+    const post = await postDAO.createpost(title, category, content, userId, 0, 0);
+    getLogger().info(`Created post: ${post}`);
+    return post;
   }
-  getposts(userId) {
-    return postDAO.getposts(userId);
+  async getposts(userId) {
+    const post = await postDAO.getposts(userId);
+    getLogger().info(`Retrieved posts`);
+    return post;
   }
 }
 

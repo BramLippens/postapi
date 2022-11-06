@@ -3,6 +3,10 @@ const { v4: uuidv4 } = require('uuid');
 const { getLogger } = require('../utils/logging');
 
 class UserDAO {
+  async getAllUsers() {
+    const users = await getKnexInstance()(tables.user).select();
+    return users;
+  }
   async registerUser(email, password) {
     const user = await getKnexInstance()(tables.user)
       .insert({
@@ -11,7 +15,6 @@ class UserDAO {
         password,
       })
       .returning('*');
-    getLogger().silly(`User created with email ${email}`);
     return user[0];
   }
   async getUserByEmail(email) {
