@@ -12,10 +12,20 @@ class postController {
       res.status(500).json({ error: 'Internal server error' });
     }
   }
-  async getPosts(req, res) {
+  async getPostsOfUser(req, res) {
     try {
       const posts = await postService.getposts(req.session.id);
       getLogger().silly(`posts fetched for user ${req.session.email}`);
+      res.status(200).json(posts);
+    } catch (error) {
+      getLogger().error(error);
+      res.status(500).json({ error: 'Internal server error' });
+    }
+  }
+  async getAllPosts(req, res) {
+    try {
+      const posts = await postService.getAllposts();
+      getLogger().silly('all posts fetched');
       res.status(200).json(posts);
     } catch (error) {
       getLogger().error(error);

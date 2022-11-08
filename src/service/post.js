@@ -14,6 +14,11 @@ class postService {
     getLogger().info(`Retrieved posts`);
     return post;
   }
+  async getAllposts() {
+    const post = await postDAO.getAllposts();
+    getLogger().info(`Retrieved all posts`);
+    return post;
+  }
 }
 
 module.exports = new postService();

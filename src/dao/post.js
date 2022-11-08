@@ -20,6 +20,10 @@ class postDAO {
     const posts = await getKnexInstance()(tables.post).select().where('userId', userId);
     return posts;
   }
+  async getAllposts() {
+    const posts = await getKnexInstance()(tables.post).select();
+    return posts;
+  }
 }
 
 module.exports = new postDAO();

@@ -22,7 +22,7 @@ module.exports = async function createServer() {
   const app = express();
   app.use(express.json());
 
-  var allowlist = ['http://localhost:3000', 'http://example2.com'];
+  var allowlist = ['http://localhost:5173/', 'http://example2.com'];
   var corsOptionsDelegate = function (req, callback) {
     var corsOptions;
     if (allowlist.indexOf(req.header('Origin')) !== -1) {
@@ -35,7 +35,7 @@ module.exports = async function createServer() {
 
   app.use(
     cors({
-      origin: 'http://localhost:3000',
+      origin: 'http://localhost:5173',
       credentials: true,
       allowedHeaders: ['Content-Type', 'Authorization'],
     })

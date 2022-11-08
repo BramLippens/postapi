@@ -15,6 +15,8 @@ router.post('/login', userController.login);
 // Create Post
 router.post('/post', requireAuth, postController.createPost);
 // get all posts of a user
-router.get('/post', requireAuth, postController.getPosts);
+router.get('/personalposts', requireAuth, postController.getPostsOfUser);
+// get all posts
+router.get('/posts', postController.getAllPosts);
 
 module.exports = router;
