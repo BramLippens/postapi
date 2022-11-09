@@ -17,8 +17,7 @@ async function initializeKnex() {
     // await knexInstance.raw('create database postdb');
     await knexInstance.raw('SELECT 1+1 AS result');
   } catch (error) {
-    console.error(error);
-    throw error;
+    getLogger().error('Could not connect to database', error);
   }
 
   let migrationsFailed = false;
